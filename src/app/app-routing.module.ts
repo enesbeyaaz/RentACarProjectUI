@@ -6,7 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {path:"", pathMatch:"full",component:CarComponent},
   {path:"cars", component:CarComponent},
-  {path:"brands", component:BrandComponent}
+  {path:"brands", component:BrandComponent},
+  {path:"cars/brand/:brandId", component:CarComponent}
 ];
 
 @NgModule({

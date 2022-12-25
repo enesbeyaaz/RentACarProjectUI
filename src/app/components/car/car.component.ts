@@ -21,10 +21,9 @@ export class CarComponent implements OnInit {
     this.activatedRoute.params.subscribe((params)=>{
       if(params["brandId"]){
         this.getCarsByBrandId(params["brandId"])
-        console.log(params["brandId"])
       }
       else{
-        this.getCars()
+        this.GetCarDetail()
       }
     })
     this.getCars();
@@ -41,7 +40,7 @@ export class CarComponent implements OnInit {
  
   getCarsByBrandId(brandId:number){
     this.carService.GetCarsByBrandId(brandId).subscribe((response)=>{
-      this.cars=response.data
+      this.details=response.data
       this.dataLoaded=true
     })
 
@@ -57,7 +56,6 @@ export class CarComponent implements OnInit {
     this.carService.GetCarDetials().subscribe((response) => {
       this.details = response.data;
       this.dataLoaded = true;
-      console.log(this.details);
     });
   }
 }
